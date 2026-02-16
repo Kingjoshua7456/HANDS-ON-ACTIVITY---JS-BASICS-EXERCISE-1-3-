@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Calculator</title>
+</head>
+<body>
+
+    <h2>js excercise 1</h2>
+
+    <label>First Number:</label>
+    <input type="number" id="num1"><br><br>
+
+    <label>Second Number:</label>
+    <input type="number" id="num2"><br><br>
+
+    <button onclick="calculate()">Calculate</button>
+    <button onclick="clearFields()">Clear</button>
+
+    <h3>Results:</h3>
+    <p id="sum"></p>
+    <p id="difference"></p>
+    <p id="product"></p>
+    <p id="quotient"></p>
+
+    <script>
+        function calculate() {
+            let num1 = parseFloat(document.getElementById("num1").value);
+            let num2 = parseFloat(document.getElementById("num2").value);
+
+            let sum = num1 + num2;
+            let difference = num1 - num2;
+            let product = num1 * num2;
+
+            document.getElementById("sum").innerHTML = "Sum: " + sum;
+            document.getElementById("difference").innerHTML = "Difference: " + difference;
+            document.getElementById("product").innerHTML = "Product: " + product;
+
+            if (num2 !== 0) {
+                let quotient = num1 / num2;
+                document.getElementById("quotient").innerHTML = "Quotient: " + quotient;
+            } else {
+                document.getElementById("quotient").innerHTML = "Quotient: Cannot divide by zero";
+            }
+        }
+
+        function clearFields() {
+            document.getElementById("num1").value = "";
+            document.getElementById("num2").value = "";
+            document.getElementById("sum").innerHTML = "";
+            document.getElementById("difference").innerHTML = "";
+            document.getElementById("product").innerHTML = "";
+            document.getElementById("quotient").innerHTML = "";
+        }
+    </script>
+
+</body>
+</html>
